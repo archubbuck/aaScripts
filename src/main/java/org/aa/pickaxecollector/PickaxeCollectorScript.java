@@ -15,7 +15,7 @@ import org.powbot.mobile.script.ScriptManager;
         name = "aaPickaxeCollector",
         description = "Collects pickaxes from the Ruins of Camdozaal",
         author = ScriptManifestDefaults.AUTHOR,
-        version = "0.0.1",
+        version = "0.0.2",
         category = ScriptCategory.MoneyMaking)
 public class PickaxeCollectorScript extends AbstractScript {
 
@@ -33,6 +33,7 @@ public class PickaxeCollectorScript extends AbstractScript {
 
     @Override
     public void onStart() {
+
         Paint paint = new PaintBuilder()
                 .addString("Status:", super::getStatus)
                 .addString("Mouse Mode: ", () -> Game.loggedIn() ? Game.getMouseToggle().name() : "UNKNOWN")
@@ -41,18 +42,19 @@ public class PickaxeCollectorScript extends AbstractScript {
                 .addString("Camera Zoom", () -> String.valueOf(Camera.getZoom()))
                 .trackInventoryItem(Constants.BRONZE_PICKAXE_ID, "Bronze Pickaxe")
                 .build();
+
         addPaint(paint);
+
+        this.setStatus("Checking quest requirement");
+        if (Quests.INSTANCE.getCompletedQuests().stream().noneMatch(quest -> quest.equals("Below Ice Mountain"))) {
+            this.setStatus("QUEST REQUIRED - Below Ice Mountain");
+            ScriptManager.INSTANCE.pause();
+        }
+
     }
 
     @Override
     public void poll() {
-
-        if (Quests.INSTANCE.getCompletedQuests().stream().noneMatch(quest -> quest.equals("Below Ice Mountain"))) {
-            this.setStatus("QUEST REQUIRED - Below Ice Mountain");
-            ScriptManager.INSTANCE.pause();
-            return;
-        }
-
         for (AbstractTask task : super.tasks) {
             String taskName = task.getClass().getSimpleName();
             if (task.activate()) {
@@ -61,6 +63,5 @@ public class PickaxeCollectorScript extends AbstractScript {
                 break;
             }
         }
-
     }
 }

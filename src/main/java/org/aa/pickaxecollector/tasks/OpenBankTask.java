@@ -10,13 +10,9 @@ public class OpenBankTask extends AbstractTask {
 
     @Override
     public boolean activate() {
-
-        if (Inventory.isFull()) {
-            return true;
-        }
-
-        return Inventory.stream().id(Constants.BRONZE_PICKAXE_ID).count() > 1
-                && GroundItems.stream().id(Constants.BRONZE_PICKAXE_ID).isEmpty();
+        return !Bank.opened()
+                && Inventory.stream().id(Constants.BRONZE_PICKAXE_ID).count() > 1
+                && (Inventory.isFull() || GroundItems.stream().id(Constants.BRONZE_PICKAXE_ID).isEmpty());
     }
 
     @Override
@@ -34,13 +30,6 @@ public class OpenBankTask extends AbstractTask {
         abstractScript.setStatus("Opening the bank");
         if (!bankChest.interact("Use") || !Condition.wait(Bank::opened, 150, 15)) {
             abstractScript.setStatus("Unable to open the bank");
-            return;
-        }
-
-        abstractScript.setStatus("Depositing inventory");
-        if (!Bank.depositInventory() || !Condition.wait(
-                () -> Inventory.stream().id(Constants.BRONZE_PICKAXE_ID).isEmpty(), 150, 15)) {
-            abstractScript.setStatus("Unable to deposit inventory");
         }
     }
 

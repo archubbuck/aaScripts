@@ -16,6 +16,7 @@ public abstract class AbstractScript extends org.powbot.api.script.AbstractScrip
     }
 
     public String setStatus(String status) {
+        getLog().info(status);
         return this.status = status;
     }
 
