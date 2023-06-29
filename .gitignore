@@ -42,5 +42,5 @@ bin/
 .DS_Store
 
 ### WIP ###
-/src/main/java/org/example/
-/src/main/java/org/aa/tutorialisland/
+/src/main/java/org/*
+!/src/main/java/org/aa/truebloods/*
