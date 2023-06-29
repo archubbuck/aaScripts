@@ -21,14 +21,9 @@ public class TakeTask extends AbstractTask {
 
         GameObject barrel = Objects.stream().name("Barrel").action("Take pickaxe").nearest().first();
 
-        if (!barrel.inViewport()) {
-            abstractScript.setStatus(barrel.name() + " is not in the viewport");
-            return;
-        }
-
         barrel.bounds(-32, 32, -64, 0, -32, 32);
 
-        if (!barrel.interact("Take pickaxe", !barrel.inViewport(true)) || !Condition.wait(() -> Inventory.stream().id(Constants.BRONZE_PICKAXE_ID).isNotEmpty(), 150, 15)) {
+        if (!barrel.interact("Take pickaxe") || !Condition.wait(() -> Inventory.stream().id(Constants.BRONZE_PICKAXE_ID).isNotEmpty(), 150, 15)) {
             abstractScript.setStatus("Unable to click the barrel");
         }
     }

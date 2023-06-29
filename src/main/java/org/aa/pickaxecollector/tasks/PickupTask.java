@@ -12,23 +12,15 @@ public class PickupTask extends AbstractTask {
 
     @Override
     public boolean activate() {
-
-        if (Inventory.isFull()) {
-            return false;
-        }
-
-        return GroundItems.stream().id(Constants.BRONZE_PICKAXE_ID).isNotEmpty() && Inventory.stream().id(Constants.BRONZE_PICKAXE_ID).isNotEmpty();
+        return !Inventory.isFull()
+                && GroundItems.stream().id(Constants.BRONZE_PICKAXE_ID).isNotEmpty()
+                && Inventory.stream().id(Constants.BRONZE_PICKAXE_ID).isNotEmpty();
     }
 
     @Override
     public void execute(AbstractScript abstractScript) {
 
-        GroundItem groundItem = GroundItems.stream().id(Constants.BRONZE_PICKAXE_ID).nearest().first();
-
-        if (!groundItem.inViewport()) {
-            abstractScript.setStatus(groundItem.name() + " is not in the viewport");
-            return;
-        }
+        GroundItem groundItem = GroundItems.stream().id(Constants.BRONZE_PICKAXE_ID).viewable().nearest().first();
 
         long countOfGroundItem = GroundItems.stream().id(groundItem.id()).at(groundItem.tile()).count();
 

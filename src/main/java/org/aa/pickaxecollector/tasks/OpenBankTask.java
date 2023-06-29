@@ -18,12 +18,12 @@ public class OpenBankTask extends AbstractTask {
     @Override
     public void execute(AbstractScript abstractScript) {
 
-        GameObject bankChest = Objects.stream().name("Bank chest").nearest().first();
+        GameObject bankChest = Objects.stream().name("Bank chest").viewable().nearest().first();
 
-        if (!bankChest.inViewport()) {
-            abstractScript.setStatus(bankChest.name() + " is not in the viewport");
-            return;
-        }
+//        if (!bankChest.inViewport()) {
+//            abstractScript.setStatus(bankChest.name() + " is not in the viewport");
+//            return;
+//        }
 
         bankChest.bounds(-32, 32, -64, 0, -32, 32);
 
