@@ -179,6 +179,6 @@ public class TrueBloodsScript extends AbstractScript {
     }
 
     public static void main(String[] args) {
-        new ScriptUploader().uploadAndStart("aaTrueBloods", "", "127.0.0.1:5865", true, false);
+        new ScriptUploader().uploadAndStart("aaTrueBloods", "", "127.0.0.1:" + System.getProperty("port"), true, true);
     }
 }
