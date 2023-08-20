@@ -10,7 +10,7 @@ public class Utils {
     }
 
     public static boolean any(@NotNull boolean... conditions) {
-        for(boolean condition : conditions) if(!condition) return true;
+        for(boolean condition : conditions) if(condition) return true;
         return false;
     }
 
