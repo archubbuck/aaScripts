@@ -51,7 +51,7 @@ public class GoToAltar implements Task {
                 .navigate(shortcutArea, Areas.CAVE_7_AREA, new Tile(3539, 9772), "Cave")
                 .navigate(Areas.CAVE_4_AREA, Areas.CAVE_5_AREA, new Tile(3492, 9862), "Cave entrance")
                 .navigate(Areas.CAVE_5_AREA, Areas.CAVE_6_AREA, Tiles.CAVE_5_EXIT, "Cave")
-                .navigate(Areas.CAVE_6_AREA, Areas.CAVE_6_AREA, Tiles.CAVE_5_EXIT, "Cave")
+                .navigate(Areas.CAVE_6_AREA, Areas.CAVE_7_AREA, Tiles.CAVE_6_EXIT, "Cave")
                 .navigate(Areas.CAVE_7_AREA, Areas.BLOOD_ALTAR_AREA, new Tile(3559, 9780), "Mysterious ruins");
 
         return caveNavigator.getResult();

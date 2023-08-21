@@ -7,6 +7,7 @@ import org.powbot.api.rt4.GameObject;
 import org.powbot.api.rt4.Movement;
 import org.powbot.api.rt4.Objects;
 import org.powbot.api.rt4.Players;
+import org.powbot.api.rt4.stream.locatable.interactive.GameObjectStream;
 
 import javax.annotation.Nullable;
 
@@ -14,9 +15,7 @@ public class CaveNavigator {
     private boolean shouldContinue = true;
 
     public CaveNavigator navigate(Area startingArea, Area destinationArea, Tile exitTile, @Nullable String caveName) {
-//        boolean skipExecution = !this.shouldContinue || !startingArea.contains(Players.local());
-
-        if (!startingArea.contains(Players.local())) {
+        if (!this.shouldContinue || !startingArea.contains(Players.local())) {
             log("Skipping execution...");
             return this;
         }

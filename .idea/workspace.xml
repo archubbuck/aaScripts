@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b7a0fe72-acf8-4769-a50f-f8b45ac05ab2" name="Changes" comment="up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/CraftRunes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/CraftRunes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/CaveNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/CaveNavigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +114,7 @@
       <recent name="org.aa.truebloods.tasks.banking" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.5935-BloodyHellScript">
+  <component name="RunManager" selected="Application.5945-BloodyHellScript">
     <configuration name="5835-GnomeScript" type="Application" factoryName="Application" folderName="Gnome" temporary="true">
       <option name="MAIN_CLASS_NAME" value="org.aa.gnome.GnomeScript" />
       <module name="aaScripts.main" />
