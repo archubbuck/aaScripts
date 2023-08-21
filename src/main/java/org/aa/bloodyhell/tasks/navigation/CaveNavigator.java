@@ -27,6 +27,7 @@ public class CaveNavigator {
                     .setRunMin(15)
                     .setRunMax(75)
                     .setUseTeleports(false)
+                    .setWalkUntil(() -> exitTile.distance() <= 5)
                     .move()
                     .getSuccess();
             if (!navigated) {
@@ -37,7 +38,7 @@ public class CaveNavigator {
         }
 
         if (caveName != null) {
-            GameObject caveObject = Objects.stream().name(caveName).within(exitTile, 5).first();
+            GameObject caveObject = Objects.stream().name(caveName).nearest(exitTile).first();
             log("Attempting to interact with " + caveName);
             boolean interacting = caveObject.valid() && caveObject.interact("Enter");
             if (!interacting) {

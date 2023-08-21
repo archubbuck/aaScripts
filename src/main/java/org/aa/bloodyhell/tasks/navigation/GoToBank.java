@@ -8,6 +8,7 @@ import org.aa.truebloods.Utils;
 import org.aa.truebloods.helpers.PouchTracker;
 import org.powbot.api.rt4.Bank;
 import org.powbot.api.rt4.Movement;
+import org.powbot.api.rt4.Objects;
 import org.powbot.api.script.AbstractScript;
 
 public class GoToBank implements Task {
@@ -29,7 +30,15 @@ public class GoToBank implements Task {
     }
 
     @Override
+//    public boolean execute(AbstractScript abstractScript) {
+//        return Movement.moveToBank().getSuccess();
+//    }
     public boolean execute(AbstractScript abstractScript) {
-        return Movement.moveToBank().getSuccess();
+        return Movement.builder(null).setToBank(true)
+                .setRunMin(45)
+                .setRunMax(75)
+                .setWalkUntil(() ->
+                        Objects.stream().name("Bank booth").nearest().first().distance() <= 5
+                ).move().getSuccess();
     }
 }

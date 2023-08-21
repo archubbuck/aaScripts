@@ -7,8 +7,6 @@ import org.aa.truebloods.Utils;
 import org.powbot.api.Condition;
 import org.powbot.api.rt4.GameObject;
 import org.powbot.api.rt4.Objects;
-import org.powbot.api.rt4.Skills;
-import org.powbot.api.rt4.walking.model.Skill;
 import org.powbot.api.script.AbstractScript;
 
 public class CraftRunes implements Task {
@@ -27,7 +25,7 @@ public class CraftRunes implements Task {
         if (!altar.valid()) return false;
 
         return altar.interact("Craft-rune")
-                && Condition.wait(() -> InventoryExtensions.doesNotContain(Items.PURE_ESSENCE), 150, 10);
+                && Condition.wait(() -> InventoryExtensions.doesNotContain(Items.PURE_ESSENCE), 75, 15);
 //        return altar.interact("Craft-rune")
 //                && Condition.wait(() -> Skills.timeSinceExpGained(Skill.Runecrafting) <= 1000, 50, 20);
     }
