@@ -21,6 +21,8 @@ import org.powbot.api.script.ScriptCategory;
 import org.powbot.api.script.ScriptManifest;
 import org.powbot.api.script.paint.Paint;
 import org.powbot.api.script.paint.PaintBuilder;
+import org.powbot.dax.api.DaxConfigs;
+import org.powbot.dax.api.DaxWalker;
 import org.powbot.mobile.service.ScriptUploader;
 
 import java.util.logging.Logger;
@@ -69,7 +71,6 @@ public class BloodyHellScript extends AbstractScript {
                         .filter(pouch -> pouch.getItemName().equalsIgnoreCase("Colossal Pouch"))
                         .collect(Collectors.toList())
         );
-//        PouchTracker.INSTANCE.updatePouchesToTrack();
     }
 
     @Override

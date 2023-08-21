@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7a0fe72-acf8-4769-a50f-f8b45ac05ab2" name="Changes" comment="up">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/CaveNavigator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/BloodyHellScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/BloodyHellScript.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,12 +148,6 @@
       <option name="MAIN_CLASS_NAME" value="org.aa.bloodyhell.BloodyHellScript" />
       <module name="aaScripts.main" />
       <option name="VM_PARAMETERS" value="-Dport=5935" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.aa.truebloods.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,12 +156,6 @@
       <option name="MAIN_CLASS_NAME" value="org.aa.bloodyhell.BloodyHellScript" />
       <module name="aaScripts.main" />
       <option name="VM_PARAMETERS" value="-Dport=5945" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.aa.truebloods.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -292,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688409557583</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="up">
+      <option name="closed" value="true" />
+      <created>1692580684172</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692580684172</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">

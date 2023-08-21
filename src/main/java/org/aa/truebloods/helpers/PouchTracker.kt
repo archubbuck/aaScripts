@@ -136,6 +136,14 @@ object PouchTracker {
                 ITEM_GIANT_POUCH -> supportedPouches[3].status = false
                 ITEM_COLOSSAL_POUCH -> supportedPouches[4].status = false
             }
+        } else if (messageEvent.message.contains("You cannot add any more essence to the pouch.", true)) {
+            when (lastPouch) {
+                ITEM_SMALL_POUCH -> supportedPouches[0].status = true
+                ITEM_MEDIUM_POUCH -> supportedPouches[1].status = true
+                ITEM_LARGE_POUCH -> supportedPouches[2].status = true
+                ITEM_GIANT_POUCH -> supportedPouches[3].status = true
+                ITEM_COLOSSAL_POUCH -> supportedPouches[4].status = true
+            }
         }
     }
 }
