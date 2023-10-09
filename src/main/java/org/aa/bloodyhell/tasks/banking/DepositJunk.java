@@ -1,9 +1,9 @@
 package org.aa.bloodyhell.tasks.banking;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
 import org.aa.bloodyhell.constants.Items;
-import org.aa.truebloods.Utils;
-import org.aa.truebloods.extensions.InventoryExtensions;
+import org.core.extensions.InventoryExtensions;
+import org.core.helpers.Conditions;
 import org.powbot.api.Condition;
 import org.powbot.api.rt4.Bank;
 import org.powbot.api.script.AbstractScript;
@@ -11,7 +11,7 @@ import org.powbot.api.script.AbstractScript;
 public class DepositJunk implements Task {
     @Override
     public boolean activate() {
-        return Utils.all(
+        return Conditions.all(
                 Bank.nearest().distance() <= 5,
                 !InventoryExtensions.containsOnly(Items.PROTECTED_ITEMS)
         );

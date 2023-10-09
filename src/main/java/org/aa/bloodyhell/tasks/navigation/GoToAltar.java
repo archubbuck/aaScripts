@@ -1,12 +1,11 @@
 package org.aa.bloodyhell.tasks.navigation;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
+import org.aa.bloodyhell.constants.Areas;
 import org.aa.bloodyhell.constants.Items;
-import org.aa.bloodyhell.extensions.EquipmentExtensions;
-import org.aa.bloodyhell.extensions.InventoryExtensions;
-import org.aa.truebloods.Utils;
-import org.aa.truebloods.constants.Areas;
-import org.aa.truebloods.constants.Tiles;
+import org.aa.bloodyhell.constants.Tiles;
+import org.core.extensions.EquipmentExtensions;
+import org.core.extensions.InventoryExtensions;
 import org.aa.truebloods.helpers.PouchTracker;
 import org.powbot.api.Area;
 import org.powbot.api.Tile;
@@ -15,18 +14,20 @@ import org.powbot.api.rt4.Skills;
 import org.powbot.api.rt4.walking.model.Skill;
 import org.powbot.api.script.AbstractScript;
 
+import static org.core.helpers.Conditions.all;
+
 public class GoToAltar implements Task {
     @Override
     public boolean activate() {
-        return Utils.all(
+        return all(
                 Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
                 EquipmentExtensions.contains(Items.RUNECRAFTING_CAPES),
                 EquipmentExtensions.contains(Items.STAVES),
                 EquipmentExtensions.contains(Items.AMULETS_OF_GLORY),
                 InventoryExtensions.contains(Items.POUCHES),
-                Utils.all(
-                        InventoryExtensions.contains(Items.PURE_ESSENCE),
-                        !PouchTracker.INSTANCE.hasPouchToFill()
+                all(
+                        InventoryExtensions.contains(Items.PURE_ESSENCE)
+//                        !PouchTracker.INSTANCE.hasPouchToFill()
                 )
         );
     }

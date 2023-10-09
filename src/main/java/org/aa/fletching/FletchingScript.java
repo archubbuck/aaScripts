@@ -4,7 +4,7 @@ import com.google.common.eventbus.Subscribe;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import org.aa.AbstractScript;
-import org.aa.ScriptManifestDefaults;
+import org.core.ScriptManifestDefaults;
 import org.aa.Task;
 import org.aa.fletching.items.Bow;
 import org.aa.fletching.tasks.*;

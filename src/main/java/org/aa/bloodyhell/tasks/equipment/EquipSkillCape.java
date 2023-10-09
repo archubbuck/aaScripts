@@ -1,9 +1,9 @@
 package org.aa.bloodyhell.tasks.equipment;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
 import org.aa.bloodyhell.constants.Items;
-import org.aa.bloodyhell.extensions.EquipmentExtensions;
-import org.aa.bloodyhell.extensions.InventoryExtensions;
+import org.core.extensions.EquipmentExtensions;
+import org.core.extensions.InventoryExtensions;
 import org.powbot.api.Condition;
 import org.powbot.api.rt4.Bank;
 import org.powbot.api.rt4.Game;

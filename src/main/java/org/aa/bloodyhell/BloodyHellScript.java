@@ -1,8 +1,7 @@
 package org.aa.bloodyhell;
 
 import com.google.common.eventbus.Subscribe;
-import org.aa.ScriptManifestDefaults;
-import org.aa.bloods.Constants;
+import org.aa.bloodyhell.constants.Items;
 import org.aa.bloodyhell.tasks.*;
 import org.aa.bloodyhell.tasks.banking.*;
 import org.aa.bloodyhell.tasks.equipment.EquipGlory;
@@ -12,6 +11,8 @@ import org.aa.bloodyhell.tasks.navigation.GoToAltar;
 import org.aa.bloodyhell.tasks.navigation.GoToBank;
 import org.aa.truebloods.helpers.PouchTracker;
 import org.aa.truebloods.helpers.SystemMessageManager;
+import org.core.ScriptManifestDefaults;
+import org.core.Task;
 import org.powbot.api.event.GameActionEvent;
 import org.powbot.api.event.InventoryChangeEvent;
 import org.powbot.api.event.MessageEvent;
@@ -21,8 +22,6 @@ import org.powbot.api.script.ScriptCategory;
 import org.powbot.api.script.ScriptManifest;
 import org.powbot.api.script.paint.Paint;
 import org.powbot.api.script.paint.PaintBuilder;
-import org.powbot.dax.api.DaxConfigs;
-import org.powbot.dax.api.DaxWalker;
 import org.powbot.mobile.service.ScriptUploader;
 
 import java.util.logging.Logger;
@@ -63,7 +62,9 @@ public class BloodyHellScript extends AbstractScript {
     @Override
     public void onStart() {
         Paint paint = new PaintBuilder()
-                .trackInventoryItem(Constants.BLOOD_RUNE)
+                .trackInventoryItem(Items.BLOOD_RUNE)
+                .addString("hasPouchToEmpty", () -> String.valueOf(PouchTracker.INSTANCE.hasPouchToEmpty()))
+                .addString("hasPouchToFill", () -> String.valueOf(PouchTracker.INSTANCE.hasPouchToFill()))
                 .build();
         addPaint(paint);
         PouchTracker.INSTANCE.setPouchesToTrack(
@@ -76,8 +77,9 @@ public class BloodyHellScript extends AbstractScript {
     @Override
     public void poll() {
         for (Task task : tasks) {
+            logger.info("Evaluating " + task.getClass().getName());
             if (task.activate()) {
-                logger.info(task.getClass().getName());
+                logger.info("Executing " + task.getClass().getName());
                 task.execute(this);
                 break;
             }

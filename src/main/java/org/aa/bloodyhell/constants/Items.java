@@ -3,6 +3,12 @@ package org.aa.bloodyhell.constants;
 public class Items {
 
     /*
+     * Runes
+     */
+
+    public static final int BLOOD_RUNE = 565;
+
+    /*
      * Runecrafting Capes
      */
 

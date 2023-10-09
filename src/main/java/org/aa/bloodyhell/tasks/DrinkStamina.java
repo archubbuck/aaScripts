@@ -1,8 +1,8 @@
 package org.aa.bloodyhell.tasks;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
 import org.aa.bloodyhell.constants.Items;
-import org.aa.bloodyhell.extensions.InventoryExtensions;
+import org.core.extensions.InventoryExtensions;
 import org.powbot.api.Condition;
 import org.powbot.api.rt4.*;
 import org.powbot.api.rt4.Game.Tab;

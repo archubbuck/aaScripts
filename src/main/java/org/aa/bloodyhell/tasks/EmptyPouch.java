@@ -1,9 +1,7 @@
 package org.aa.bloodyhell.tasks;
 
-import org.aa.bloodyhell.Task;
-import org.aa.bloodyhell.constants.Items;
-import org.aa.bloodyhell.extensions.InventoryExtensions;
-import org.aa.truebloods.constants.Areas;
+import org.core.Task;
+import org.aa.bloodyhell.constants.Areas;
 import org.aa.truebloods.helpers.PouchTracker;
 import org.powbot.api.Condition;
 import org.powbot.api.Random;

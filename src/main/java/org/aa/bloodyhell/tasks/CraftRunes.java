@@ -1,18 +1,19 @@
 package org.aa.bloodyhell.tasks;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
 import org.aa.bloodyhell.constants.Items;
-import org.aa.bloodyhell.extensions.InventoryExtensions;
-import org.aa.truebloods.Utils;
+import org.core.extensions.InventoryExtensions;
 import org.powbot.api.Condition;
 import org.powbot.api.rt4.GameObject;
 import org.powbot.api.rt4.Objects;
 import org.powbot.api.script.AbstractScript;
 
+import static org.core.helpers.Conditions.all;
+
 public class CraftRunes implements Task {
     @Override
     public boolean activate() {
-        return Utils.all(
+        return all(
                 getAltar().valid(),
                 InventoryExtensions.contains(Items.PURE_ESSENCE)
         );

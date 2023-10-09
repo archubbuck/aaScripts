@@ -1,10 +1,10 @@
 package org.aa.bloodyhell.tasks.banking;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
 import org.aa.bloodyhell.constants.Items;
-import org.aa.bloodyhell.extensions.EquipmentExtensions;
-import org.aa.bloodyhell.extensions.InventoryExtensions;
-import org.aa.truebloods.Utils;
+import org.core.extensions.EquipmentExtensions;
+import org.core.extensions.InventoryExtensions;
+import org.core.helpers.Conditions;
 import org.powbot.api.Notifications;
 import org.powbot.api.rt4.Bank;
 import org.powbot.api.rt4.Item;
@@ -14,7 +14,7 @@ import org.powbot.mobile.script.ScriptManager;
 public class WithdrawSkillCape implements Task {
     @Override
     public boolean activate() {
-        return Utils.all(
+        return Conditions.all(
                 Bank.nearest().distance() <= 5,
                 InventoryExtensions.doesNotContain(Items.RUNECRAFTING_CAPES),
                 EquipmentExtensions.doesNotContain(Items.RUNECRAFTING_CAPES)

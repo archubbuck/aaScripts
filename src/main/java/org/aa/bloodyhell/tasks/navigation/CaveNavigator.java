@@ -15,6 +15,8 @@ public class CaveNavigator {
     private boolean shouldContinue = true;
 
     public CaveNavigator navigate(Area startingArea, Area destinationArea, Tile exitTile, @Nullable String caveName) {
+        log("Evaluating " + startingArea.getCentralTile() + "|" + destinationArea.getCentralTile() + "|" + exitTile + "|" + caveName);
+
         if (!this.shouldContinue || !startingArea.contains(Players.local())) {
             log("Skipping execution...");
             return this;
@@ -59,7 +61,7 @@ public class CaveNavigator {
     }
 
     private void log(String message) {
-        String LOG_PREFIX = "[CAVE_NAVIGATOR] ";
+        String LOG_PREFIX = "[Cave Engine] ";
         System.out.println(LOG_PREFIX + message);
     }
 }

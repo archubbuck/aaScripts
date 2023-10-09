@@ -1,6 +1,6 @@
 package org.aa.bloodyhell.tasks;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
 import org.powbot.api.Condition;
 import org.powbot.api.rt4.Bank;
 import org.powbot.api.rt4.Camera;

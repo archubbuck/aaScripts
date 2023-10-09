@@ -1,9 +1,8 @@
 package org.aa.bloodyhell.tasks;
 
-import org.aa.bloodyhell.Task;
+import org.core.Task;
 import org.aa.bloodyhell.constants.Items;
-import org.aa.bloodyhell.extensions.InventoryExtensions;
-import org.aa.truebloods.Utils;
+import org.core.extensions.InventoryExtensions;
 import org.aa.truebloods.helpers.PouchTracker;
 import org.powbot.api.Condition;
 import org.powbot.api.Random;
@@ -12,12 +11,14 @@ import org.powbot.api.script.AbstractScript;
 
 import java.util.logging.Logger;
 
+import static org.core.helpers.Conditions.all;
+
 public class FillPouch implements Task {
     Logger logger = Logger.getLogger(this.getClass().getName());
 
     @Override
     public boolean activate() {
-        return Utils.all(
+        return all(
                 Bank.nearest().distance() <= 5,
                 InventoryExtensions.containsAll(Items.COLOSSAL_POUCH, Items.PURE_ESSENCE),
                 PouchTracker.INSTANCE.hasPouchToFill()

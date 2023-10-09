@@ -5,9 +5,164 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7a0fe72-acf8-4769-a50f-f8b45ac05ab2" name="Changes" comment="up">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Areas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Tiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/core/helpers/Conditions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/ScriptManifestDefaults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/core/ScriptManifestDefaults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/BarroniteScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/mining/CloseBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/mining/DepositItemsAtBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/mining/MineBarroniteTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/mining/OpenBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/mining/WalkToBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/barronite/mining/WalkToMineTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/BloodsScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/ReactionGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/tasks/ActivateBloodEssenceTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/tasks/ChipDenseRunestoneTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/tasks/NavigateToBloodAltarTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/tasks/NavigateToDarkAltarTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/tasks/NavigateToDenseEssenceTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloods/tasks/VenerateDarkAltarTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/BloodyHellScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/BloodyHellScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/core/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/extensions/BankExtensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/core/extensions/BankExtensions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/extensions/ConditionExtensions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/extensions/EquipmentExtensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/core/extensions/EquipmentExtensions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/extensions/InventoryExtensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/core/extensions/InventoryExtensions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/ActivateBloodEssence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/ActivateBloodEssence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/CraftRunes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/CraftRunes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/DrinkStamina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/DrinkStamina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/EmptyPouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/EmptyPouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/FillPouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/FillPouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/SetCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/SetCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/DepositJunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/DepositJunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawBloodEssence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawBloodEssence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawBloodEssenceActive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawBloodEssenceActive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawGlory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawGlory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawPouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawPouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawPureEssence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawPureEssence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawSkillCape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawSkillCape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawStamina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/banking/WithdrawStamina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/equipment/EquipGlory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/equipment/EquipGlory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/equipment/EquipSkillCape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/equipment/EquipSkillCape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/equipment/EquipStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/equipment/EquipStaff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/CaveNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/CaveNavigator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/fletching/FletchingScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/fletching/FletchingScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/Activity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/GnomeScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/GnomeScript2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/DepositItemsTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/OpenBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/SetCameraTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/WithdrawItemsTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/Cook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/battas/CheeseAndTomatoBatta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/battas/FruitBatta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/battas/ToadBatta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/battas/VegetableBatta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/battas/WormBatta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/cocktails/BlurberrySpecial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/cocktails/ChocSaturday.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/cocktails/DrunkDragon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/cocktails/FruitBlast.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/cocktails/PineapplePunch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/cocktails/ShortGreenGuy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/cocktails/WizardBlizzard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/crunchies/ChocchipCrunchies.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/crunchies/SpicyCrunchies.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/crunchies/ToadCrunchies.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/crunchies/WormCrunchies.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/gnomebowls/ChocolateBomb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/gnomebowls/TangledToadsLegs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/gnomebowls/VegetableBall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/cook/gnomebowls/WormHole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/shop/heckelfunch/BuyFromHeckelFunchShopTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/shop/heckelfunch/DepositItemsToBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/shop/heckelfunch/NavigateToBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/shop/heckelfunch/NavigateToHeckelFunchShopTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/shop/heckelfunch/OpenBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/shop/heckelfunch/OpenHeckelFunchShopTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome/tasks/shop/heckelfunch/Shop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome2/Configuration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome2/Script.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome2/models/Activity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/gnome2/models/ActivityCategory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/muler/MulerScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/PickaxeCollectorScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/CloseBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/DepositToBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/DropTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/EnableSingleTapDropTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/OpenBankTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/PickupTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/SetCameraPitchTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/SetCameraZoomTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/pickaxecollector/tasks/TakeTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/safecracker/SafeCrackerScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/sorceressgarden/CollisionDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/sorceressgarden/SorceressGardenScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/spamclicker/SpamClickerScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/TrueBloodsScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/constants/Areas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/constants/Items.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/constants/Tiles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/extensions/BankExtensions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/extensions/ConditionExtensions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/extensions/EquipmentExtensions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/extensions/InventoryExtensions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/helpers/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/helpers/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/helpers/InventoryExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/helpers/InventoryExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/helpers/PouchTracker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/helpers/PouchTracker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/helpers/SystemMessageManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/helpers/SystemMessageManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/ActivateBloodEssence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/EmptyColossalPouch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/MakeBloodRunes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/SetCameraTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/DepositItems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/DrinkStamina.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/EquipGlory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/FillColossalPouch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/OpenBank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/WithdrawGlory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/WithdrawPureEssence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/banking/WithdrawStamina.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToBank.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToBloodAltar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToCave1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToCave2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToCave3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToCave4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToCave5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToCave6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/truebloods/tasks/navigation/WalkToCave7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tut/Configuration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tut/Constants.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tut/Script.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tut/tasks/Task.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tut/tasks/camera/SetCameraZoom.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/ScriptHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/TutorialIslandScript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/tasks/ContinueChatTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/tasks/DisableHideChatBoxTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/tasks/EnableRunningTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/tasks/LogoutTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/tasks/SetOutfitTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/tasks/WaitForDisplayNameTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/tutorialisland/tasks/ZoomOutTask.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +269,7 @@
       <recent name="org.aa.truebloods.tasks.banking" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.5945-BloodyHellScript">
+  <component name="RunManager" selected="Application.5965-BloodyHellScript">
     <configuration name="5835-GnomeScript" type="Application" factoryName="Application" folderName="Gnome" temporary="true">
       <option name="MAIN_CLASS_NAME" value="org.aa.gnome.GnomeScript" />
       <module name="aaScripts.main" />
@@ -151,10 +306,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="5945-BloodyHellScript" type="Application" factoryName="Application" folderName="BloodyHell">
+    <configuration name="5965-BloodyHellScript" type="Application" factoryName="Application" folderName="BloodyHell">
       <option name="MAIN_CLASS_NAME" value="org.aa.bloodyhell.BloodyHellScript" />
       <module name="aaScripts.main" />
-      <option name="VM_PARAMETERS" value="-Dport=5945" />
+      <option name="VM_PARAMETERS" value="-Dport=5965" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="5965-BloodyHellScript" type="Application" factoryName="Application" folderName="BloodyHell">
+      <option name="MAIN_CLASS_NAME" value="org.aa.bloodyhell.BloodyHellScript" />
+      <module name="aaScripts.main" />
+      <option name="VM_PARAMETERS" value="-Dport=5965" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -214,7 +377,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.5935-BloodyHellScript" />
-      <item itemvalue="Application.5945-BloodyHellScript" />
+      <item itemvalue="Application.5965-BloodyHellScript" />
       <item itemvalue="Application.5845-GnomeScript" />
       <item itemvalue="Application.5835-GnomeScript" />
       <item itemvalue="Application.BloodsScript" />
