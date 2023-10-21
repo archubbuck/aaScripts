@@ -4,13 +4,15 @@ import org.powbot.api.Tile;
 
 public class Tiles {
 
-    public static final Tile CAVE_1_EXIT = new Tile(3447, 9822, 0);
+    public static final Tile CAVE_1_EXIT_TILE = new Tile(3447, 9822, 0);
 
-    public static final Tile CAVE_2_EXIT = new Tile(3466, 9820, 0);
+    public static final Tile CAVE_2_EXIT_TILE = new Tile(3466, 9820, 0);
 
-    public static final Tile CAVE_3_EXIT = new Tile(3483, 9832, 0);
+//    public static final Tile CAVE_3_EXIT = new Tile(3483, 9832, 0);
 
-    public static final Tile CAVE_4_EXIT = new Tile(3492, 9862, 0);
+    public static final Tile CAVE_3_EXIT_TILE = new Tile(3500, 9804);
+//    public static final Tile CAVE_4_EXIT_TILE = new Tile(3492, 9862, 0);
+    public static final Tile CAVE_4_EXIT_TILE = new Tile(3539, 9772, 0);
 
     public static final Tile CAVE_5_EXIT = new Tile(3560, 9814, 0);
 

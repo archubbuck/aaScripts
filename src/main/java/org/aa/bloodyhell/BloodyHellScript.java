@@ -7,8 +7,7 @@ import org.aa.bloodyhell.tasks.banking.*;
 import org.aa.bloodyhell.tasks.equipment.EquipGlory;
 import org.aa.bloodyhell.tasks.equipment.EquipSkillCape;
 import org.aa.bloodyhell.tasks.equipment.EquipStaff;
-import org.aa.bloodyhell.tasks.navigation.GoToAltar;
-import org.aa.bloodyhell.tasks.navigation.GoToBank;
+import org.aa.bloodyhell.tasks.navigation.*;
 import org.aa.truebloods.helpers.PouchTracker;
 import org.aa.truebloods.helpers.SystemMessageManager;
 import org.core.ScriptManifestDefaults;
@@ -22,6 +21,7 @@ import org.powbot.api.script.ScriptCategory;
 import org.powbot.api.script.ScriptManifest;
 import org.powbot.api.script.paint.Paint;
 import org.powbot.api.script.paint.PaintBuilder;
+import org.powbot.dax.api.DaxWalker;
 import org.powbot.mobile.service.ScriptUploader;
 
 import java.util.logging.Logger;
@@ -56,7 +56,13 @@ public class BloodyHellScript extends AbstractScript {
             new FillPouch(),
             new EmptyPouch(),
             new CraftRunes(),
-            new GoToAltar()
+            new GoToCave1(),
+            new GoToCave2(),
+            new GoToCave3(),
+            new GoToCave4(),
+            new GoToCave7(),
+            new GoToBloodAltar(),
+//            new GoToAltar()
     };
 
     @Override
@@ -77,10 +83,9 @@ public class BloodyHellScript extends AbstractScript {
     @Override
     public void poll() {
         for (Task task : tasks) {
-            logger.info("Evaluating " + task.getClass().getName());
             if (task.activate()) {
                 logger.info("Executing " + task.getClass().getName());
-                task.execute(this);
+                boolean result = task.execute(this);
                 break;
             }
         }

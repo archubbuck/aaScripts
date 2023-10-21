@@ -6,7 +6,6 @@ import org.aa.bloodyhell.constants.Items;
 import org.aa.bloodyhell.constants.Tiles;
 import org.core.extensions.EquipmentExtensions;
 import org.core.extensions.InventoryExtensions;
-import org.aa.truebloods.helpers.PouchTracker;
 import org.powbot.api.Area;
 import org.powbot.api.Tile;
 import org.powbot.api.rt4.Objects;
@@ -40,7 +39,7 @@ public class GoToAltar implements Task {
         boolean canTakeShortcut = Skills.level(Skill.Agility) >= 93;
 
         CaveNavigator caveNavigator = new CaveNavigator()
-                .navigate(Areas.EDGEVILLE_AREA, Areas.CAVE_1_AREA, Tiles.CAVE_1_EXIT, null)
+                .navigate(Areas.EDGEVILLE_AREA, Areas.CAVE_1_AREA, Tiles.CAVE_1_EXIT_TILE, null)
                 .navigate(Areas.CAVE_1_AREA, Areas.CAVE_2_AREA, new Tile(3447, 9822), "Cave entrance")
                 .navigate(Areas.CAVE_2_AREA, Areas.CAVE_3_AREA, new Tile(3466, 9820), "Cave entrance")
                 .navigate(

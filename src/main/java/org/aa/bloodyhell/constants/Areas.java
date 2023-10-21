@@ -24,35 +24,59 @@ public class Areas {
             new Tile(3461, 9817, 0),
             new Tile(3459, 9815, 0));
 
-    public static final Area CAVE_3_AREA = new Area(
-            new Tile(3475, 9836, 0),
-            new Tile(3475, 9832, 0),
-            new Tile(3477, 9830, 0),
-            new Tile(3479, 9823, 0),
-            new Tile(3482, 9820, 0),
-            new Tile(3485, 9816, 0),
-            new Tile(3489, 9809, 0),
-            new Tile(3492, 9807, 0),
-            new Tile(3497, 9803, 0),
-            new Tile(3498, 9803, 0),
-            new Tile(3500, 9801, 0),
-            new Tile(3501, 9801, 0),
-            new Tile(3506, 9806, 0),
-            new Tile(3506, 9811, 0),
-            new Tile(3504, 9817, 0),
-            new Tile(3501, 9818, 0),
-            new Tile(3497, 9817, 0),
-            new Tile(3494, 9820, 0),
-            new Tile(3493, 9822, 0),
-            new Tile(3494, 9823, 0),
-            new Tile(3494, 9825, 0),
-            new Tile(3492, 9827, 0),
-            new Tile(3487, 9828, 0),
-            new Tile(3485, 9831, 0),
-            new Tile(3484, 9837, 0),
-            new Tile(3475, 9837, 0));
+//    public static final Area CAVE_3_AREA = new Area(
+//            new Tile(3475, 9836, 0),
+//            new Tile(3475, 9832, 0),
+//            new Tile(3477, 9830, 0),
+//            new Tile(3479, 9823, 0),
+//            new Tile(3482, 9820, 0),
+//            new Tile(3485, 9816, 0),
+//            new Tile(3489, 9809, 0),
+//            new Tile(3492, 9807, 0),
+//            new Tile(3497, 9803, 0),
+//            new Tile(3498, 9803, 0),
+//            new Tile(3500, 9801, 0),
+//            new Tile(3501, 9801, 0),
+//            new Tile(3506, 9806, 0),
+//            new Tile(3506, 9811, 0),
+//            new Tile(3504, 9817, 0),
+//            new Tile(3501, 9818, 0),
+//            new Tile(3497, 9817, 0),
+//            new Tile(3494, 9820, 0),
+//            new Tile(3493, 9822, 0),
+//            new Tile(3494, 9823, 0),
+//            new Tile(3494, 9825, 0),
+//            new Tile(3492, 9827, 0),
+//            new Tile(3487, 9828, 0),
+//            new Tile(3485, 9831, 0),
+//            new Tile(3484, 9837, 0),
+//            new Tile(3475, 9837, 0));
 
-    public static final Area CAVE_4_AREA = new Area(new Tile(3488, 9877, 0), new Tile(3514, 9856, 0));
+    public static final Area CAVE_3_AREA = new Area(
+            new Tile(3476, 9837, 0),
+            new Tile(3476, 9827, 0),
+            new Tile(3490, 9808, 0),
+            new Tile(3501, 9800, 0),
+            new Tile(3507, 9807, 0),
+            new Tile(3507, 9814, 0),
+            new Tile(3492, 9828, 0),
+            new Tile(3483, 9837, 0),
+            new Tile(3476, 9837, 0));
+
+    public static final Area CAVE_4_AREA = new Area(
+            new Tile(3532, 9791, 0),
+            new Tile(3528, 9787, 0),
+            new Tile(3528, 9779, 0),
+            new Tile(3532, 9775, 0),
+            new Tile(3532, 9757, 0),
+            new Tile(3535, 9751, 0),
+            new Tile(3543, 9744, 0),
+            new Tile(3546, 9744, 0),
+            new Tile(3546, 9753, 0),
+            new Tile(3542, 9757, 0),
+            new Tile(3540, 9764, 0),
+            new Tile(3540, 9791, 0),
+            new Tile(3532, 9791, 0));
 
     public static final Area CAVE_5_AREA = new Area(
             new Tile(3511, 9809, 0),
@@ -90,7 +114,18 @@ public class Areas {
             new Tile(3561, 9811, 0),
             new Tile(3571, 9801, 0));
 
-    public static final Area CAVE_7_AREA = new Area(new Tile(3572, 9785, 0), new Tile(3542, 9763, 0));
+    public static final Area CAVE_7_AREA = new Area(
+            new Tile(3542, 9775, 0),
+            new Tile(3542, 9769, 0),
+            new Tile(3545, 9763, 0),
+            new Tile(3546, 9758, 0),
+            new Tile(3550, 9755, 0),
+            new Tile(3559, 9755, 0),
+            new Tile(3573, 9769, 0),
+            new Tile(3573, 9781, 0),
+            new Tile(3566, 9787, 0),
+            new Tile(3552, 9787, 0),
+            new Tile(3542, 9775, 0));
 
     public static final Area BLOOD_ALTAR_AREA = new Area(new Tile(3220, 4849, 0), new Tile(3243, 4822, 0));
 
