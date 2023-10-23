@@ -16,13 +16,13 @@ public class GoToCave2 implements Task {
     @Override
     public boolean activate() {
         return all(
-                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
+//                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
+                Areas.CAVE_1_AREA.contains(Players.local()),
                 EquipmentExtensions.contains(Items.RUNECRAFTING_CAPES),
                 EquipmentExtensions.contains(Items.STAVES),
                 EquipmentExtensions.contains(Items.AMULETS_OF_GLORY),
                 InventoryExtensions.contains(Items.POUCHES),
-                InventoryExtensions.contains(Items.PURE_ESSENCE),
-                Areas.CAVE_1_AREA.contains(Players.local())
+                InventoryExtensions.contains(Items.PURE_ESSENCE)
         );
     }
 

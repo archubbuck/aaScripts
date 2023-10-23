@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7a0fe72-acf8-4769-a50f-f8b45ac05ab2" name="Changes" comment="up">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBloodAltar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/WalkToTheAltar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/WithdrawItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/core/Banks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/BloodyHellScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/BloodyHellScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Areas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Areas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Tiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/constants/Tiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/EmptyPouch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/EmptyPouch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/CaveNavigator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToAltar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBloodAltar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToBloodAltar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/aa/bloodyhell/tasks/navigation/GoToCave7.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,15 +64,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Kotlin File" />
         <option value="Kotlin Enum" />
         <option value="AnnotationType" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Data Class" />
         <option value="Interface" />
+        <option value="Kotlin Data Class" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -115,11 +119,11 @@
       <recent name="org.aa.gnome2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.aa.bloodyhell.tasks.equipment" />
       <recent name="org.aa.bloodyhell.tasks.navigation" />
       <recent name="org.aa.bloodyhell.tasks" />
       <recent name="org.aa.truebloods.tasks" />
       <recent name="org.aa.truebloods.extensions" />
-      <recent name="org.aa.truebloods.tasks.navigation" />
     </key>
   </component>
   <component name="RunManager" selected="Application.5865-BloodyHellScript">

@@ -39,9 +39,10 @@ public class EmptyPouch implements Task {
         ).list();
 
         pouches.forEach(pouch -> {
-            if (pouch.interact("Empty")) {
-                Condition.sleep(Random.nextInt(550, 650));
-            }
+            pouch.interact("Empty");
+//            if (pouch.interact("Empty")) {
+//                Condition.sleep(Random.nextInt(550, 650));
+//            }
         });
 
         return true;

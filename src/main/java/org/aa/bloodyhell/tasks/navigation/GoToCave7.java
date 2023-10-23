@@ -7,6 +7,7 @@ import org.core.Task;
 import org.core.extensions.EquipmentExtensions;
 import org.core.extensions.InventoryExtensions;
 import org.powbot.api.Condition;
+import org.powbot.api.Tile;
 import org.powbot.api.rt4.*;
 import org.powbot.api.script.AbstractScript;
 
@@ -17,13 +18,13 @@ public class GoToCave7 implements Task {
     @Override
     public boolean activate() {
         return all(
-                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
+//                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
+                Areas.CAVE_4_AREA.contains(Players.local()),
                 EquipmentExtensions.contains(Items.RUNECRAFTING_CAPES),
                 EquipmentExtensions.contains(Items.STAVES),
                 EquipmentExtensions.contains(Items.AMULETS_OF_GLORY),
                 InventoryExtensions.contains(Items.POUCHES),
-                InventoryExtensions.contains(Items.PURE_ESSENCE),
-                Areas.CAVE_4_AREA.contains(Players.local())
+                InventoryExtensions.contains(Items.PURE_ESSENCE)
         );
     }
 

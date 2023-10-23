@@ -15,26 +15,28 @@ import static org.core.helpers.Conditions.all;
 
 public class GoToBloodAltar implements Task {
 //    private final Tile RUINS_TILE = new Tile(3559, 9780);
-    private final Tile RUINS_TILE = new Tile(3562, 9782);
+//    private final Tile RUINS_TILE = new Tile(3562, 9782);
+
+    private final Tile RUINS_TILE = new Tile(3560, 9780, 0);
 
     @Override
     public boolean activate() {
         return all(
-                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
+                Areas.CAVE_7_AREA.contains(Players.local()),
+//                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
                 EquipmentExtensions.contains(Items.RUNECRAFTING_CAPES),
                 EquipmentExtensions.contains(Items.STAVES),
                 EquipmentExtensions.contains(Items.AMULETS_OF_GLORY),
                 InventoryExtensions.contains(Items.POUCHES),
-                InventoryExtensions.contains(Items.PURE_ESSENCE),
-                Areas.CAVE_7_AREA.contains(Players.local())
+                InventoryExtensions.contains(Items.PURE_ESSENCE)
         );
     }
 
     @Override
     public boolean execute(AbstractScript abstractScript) {
-        System.out.println("Navigating to RUINS_TILE");
+//        System.out.println("Navigating to RUINS_TILE");
 
-        System.out.println("Distance: " + RUINS_TILE.distance());
+//        System.out.println("Distance: " + RUINS_TILE.distance());
 
         if (RUINS_TILE.distance() > 5) {
             boolean navigated = Movement.builder(RUINS_TILE)
@@ -46,7 +48,13 @@ public class GoToBloodAltar implements Task {
                     .getSuccess();
         }
 
+//        GameObject ruins2 = Objects.stream().name("Mysterious ruins").first();
+
+//        System.out.println(ruins2.tile());
+
         GameObject ruins = Objects.stream().name("Mysterious ruins")
+//                .at(RUINS_TILE)
+                .within(20)
                 .nearest(RUINS_TILE)
                 .first();
 

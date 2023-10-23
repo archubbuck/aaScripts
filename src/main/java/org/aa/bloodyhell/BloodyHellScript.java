@@ -21,7 +21,6 @@ import org.powbot.api.script.ScriptCategory;
 import org.powbot.api.script.ScriptManifest;
 import org.powbot.api.script.paint.Paint;
 import org.powbot.api.script.paint.PaintBuilder;
-import org.powbot.dax.api.DaxWalker;
 import org.powbot.mobile.service.ScriptUploader;
 
 import java.util.logging.Logger;
@@ -56,13 +55,7 @@ public class BloodyHellScript extends AbstractScript {
             new FillPouch(),
             new EmptyPouch(),
             new CraftRunes(),
-            new GoToCave1(),
-            new GoToCave2(),
-            new GoToCave3(),
-            new GoToCave4(),
-            new GoToCave7(),
-            new GoToBloodAltar(),
-//            new GoToAltar()
+            new WalkToTheAltar(),
     };
 
     @Override
@@ -83,6 +76,7 @@ public class BloodyHellScript extends AbstractScript {
     @Override
     public void poll() {
         for (Task task : tasks) {
+            logger.info("Checking: " + task.getClass().getName());
             if (task.activate()) {
                 logger.info("Executing " + task.getClass().getName());
                 boolean result = task.execute(this);

@@ -20,16 +20,16 @@ public class GoToCave1 implements Task {
     @Override
     public boolean activate() {
         return all(
-                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
+                any(
+                        Areas.EDGEVILLE_AREA.contains(Players.local()),
+                        Areas.FAIRY_RING_AREA.contains(Players.local())
+                ),
+//                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
                 EquipmentExtensions.contains(Items.RUNECRAFTING_CAPES),
                 EquipmentExtensions.contains(Items.STAVES),
                 EquipmentExtensions.contains(Items.AMULETS_OF_GLORY),
                 InventoryExtensions.contains(Items.POUCHES),
-                InventoryExtensions.contains(Items.PURE_ESSENCE),
-                any(
-                        Areas.EDGEVILLE_AREA.contains(Players.local()),
-                        Areas.FAIRY_RING_AREA.contains(Players.local())
-                )
+                InventoryExtensions.contains(Items.PURE_ESSENCE)
         );
     }
 

@@ -1,14 +1,15 @@
 package org.aa.bloodyhell.tasks.navigation;
 
+import org.aa.bloodyhell.constants.Areas;
+import org.core.Banks;
 import org.core.Task;
 import org.aa.bloodyhell.constants.Items;
 import org.core.extensions.EquipmentExtensions;
 import org.core.extensions.InventoryExtensions;
 import org.core.helpers.Conditions;
 import org.aa.truebloods.helpers.PouchTracker;
-import org.powbot.api.rt4.Bank;
-import org.powbot.api.rt4.Movement;
-import org.powbot.api.rt4.Objects;
+import org.powbot.api.Condition;
+import org.powbot.api.rt4.*;
 import org.powbot.api.script.AbstractScript;
 
 public class GoToBank implements Task {
@@ -16,6 +17,7 @@ public class GoToBank implements Task {
     public boolean activate() {
         return Conditions.all(
                 Bank.nearest().distance() > 5,
+//                Bank.nearest().distance() > 15,
                 Conditions.any(
                         EquipmentExtensions.doesNotContain(Items.RUNECRAFTING_CAPES),
                         EquipmentExtensions.doesNotContain(Items.STAVES),
@@ -30,10 +32,10 @@ public class GoToBank implements Task {
     }
 
     @Override
-//    public boolean execute(AbstractScript abstractScript) {
-//        return Movement.moveToBank().getSuccess();
-//    }
     public boolean execute(AbstractScript abstractScript) {
+//        Item amulet = Equipment.stream().id(Items.AMULETS_OF_GLORY).first();
+//        return amulet.interact("Edgeville") && Condition.wait(() ->
+//                Bank.nearest().distance() <= 15, 10, 150);
         return Movement.builder(null).setToBank(true)
                 .setRunMin(45)
                 .setRunMax(75)
@@ -41,4 +43,17 @@ public class GoToBank implements Task {
                         Objects.stream().name("Bank booth").nearest().first().distance() <= 5
                 ).move().getSuccess();
     }
+
+//    @Override
+////    public boolean execute(AbstractScript abstractScript) {
+////        return Movement.moveToBank().getSuccess();
+////    }
+//    public boolean execute(AbstractScript abstractScript) {
+//        return Movement.builder(null).setToBank(true)
+//                .setRunMin(45)
+//                .setRunMax(75)
+//                .setWalkUntil(() ->
+//                        Objects.stream().name("Bank booth").nearest().first().distance() <= 5
+//                ).move().getSuccess();
+//    }
 }
