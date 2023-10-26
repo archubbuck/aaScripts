@@ -39,7 +39,7 @@ public class GoToCave1 extends Task {
         Tile tile = new Tile(3129, 3497, 0)
                 .derive(Random.nextInt(-2,3), Random.nextInt(-2,3));
 
-        if (!tile.loaded()) {
+        if (!tile.loaded() || tile.distance() > 5) {
             boolean navigated = Movement.builder(tile)
                     .setRunMin(15)
                     .setRunMax(75)
