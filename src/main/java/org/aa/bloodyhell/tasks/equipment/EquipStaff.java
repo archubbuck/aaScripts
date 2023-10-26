@@ -12,7 +12,7 @@ import org.powbot.api.rt4.Inventory;
 import org.powbot.api.rt4.Item;
 import org.powbot.api.script.AbstractScript;
 
-public class EquipStaff implements Task {
+public class EquipStaff extends Task {
     @Override
     public boolean activate() {
         return EquipmentExtensions.doesNotContain(Items.STAVES)
@@ -20,9 +20,9 @@ public class EquipStaff implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
-        if (!Bank.opened() && !Game.tab(Tab.INVENTORY)) return false;
+    public void execute(AbstractScript abstractScript) {
+        if (!Bank.opened() && !Game.tab(Tab.INVENTORY)) return;
         Item item = Inventory.stream().id(Items.STAVES).first();
-        return item.interact("Wield") && Condition.wait(() -> EquipmentExtensions.contains(item.id()), 300, 10);
+        boolean equipped = item.interact("Wield") && Condition.wait(() -> EquipmentExtensions.contains(item.id()), 300, 10);
     }
 }

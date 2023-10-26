@@ -11,7 +11,8 @@ import org.powbot.api.rt4.Movement;
 import org.powbot.api.script.AbstractScript;
 import org.powbot.mobile.script.ScriptManager;
 
-public class WithdrawStamina implements Task {
+public class WithdrawStamina extends Task {
+
     @Override
     public boolean activate() {
         return Conditions.all(
@@ -22,17 +23,17 @@ public class WithdrawStamina implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
-        if (!Bank.open()) return false;
+    public void execute(AbstractScript abstractScript) {
+        if (!Bank.open()) return;
 
         Item item = Bank.stream().id(Items.STAMINA_POTIONS).first();
 
         if (!item.valid()) {
             ScriptManager.INSTANCE.stop();
             Notifications.showNotification("You are missing stamina potions!");
-            return false;
+            return;
         }
 
-        return Bank.withdraw(item, 1);
+        Bank.withdraw(item, 1);
     }
 }

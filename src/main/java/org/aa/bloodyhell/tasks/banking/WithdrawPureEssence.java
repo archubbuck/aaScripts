@@ -12,7 +12,7 @@ import org.powbot.mobile.script.ScriptManager;
 import static org.core.helpers.Conditions.all;
 import static org.core.helpers.Conditions.any;
 
-public class WithdrawPureEssence implements Task {
+public class WithdrawPureEssence extends Task {
     @Override
     public boolean activate() {
         return all(
@@ -25,17 +25,17 @@ public class WithdrawPureEssence implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
-        if (!Bank.open()) return false;
+    public void execute(AbstractScript abstractScript) {
+        if (!Bank.open()) return;
 
         Item item = Bank.stream().id(Items.PURE_ESSENCE).first();
 
         if (!item.valid()) {
             ScriptManager.INSTANCE.stop();
             Notifications.showNotification("You are missing pure essence!");
-            return false;
+            return;
         }
 
-        return Bank.withdraw(item.id(), Bank.Amount.ALL);
+        Bank.withdraw(item.id(), Bank.Amount.ALL);
     }
 }

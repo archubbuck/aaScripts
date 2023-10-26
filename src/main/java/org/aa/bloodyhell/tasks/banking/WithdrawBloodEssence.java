@@ -10,7 +10,8 @@ import org.powbot.api.rt4.Item;
 import org.powbot.api.script.AbstractScript;
 import org.powbot.mobile.script.ScriptManager;
 
-public class WithdrawBloodEssence implements Task {
+public class WithdrawBloodEssence extends Task {
+
     @Override
     public boolean activate() {
         return Conditions.all(
@@ -21,17 +22,17 @@ public class WithdrawBloodEssence implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
-        if (!Bank.open()) return false;
+    public void execute(AbstractScript abstractScript) {
+        if (!Bank.open()) return;
 
         Item item = Bank.stream().id(Items.BLOOD_ESSENCE).first();
 
         if (!item.valid()) {
             ScriptManager.INSTANCE.stop();
             Notifications.showNotification("You are missing a blood essence!");
-            return false;
+            return;
         }
 
-        return Bank.withdraw(item.id(), Bank.Amount.ALL);
+        Bank.withdraw(item.id(), Bank.Amount.ALL);
     }
 }

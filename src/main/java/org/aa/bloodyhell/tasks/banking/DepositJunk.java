@@ -8,7 +8,7 @@ import org.powbot.api.Condition;
 import org.powbot.api.rt4.Bank;
 import org.powbot.api.script.AbstractScript;
 
-public class DepositJunk implements Task {
+public class DepositJunk extends Task {
     @Override
     public boolean activate() {
         return Conditions.all(
@@ -18,9 +18,9 @@ public class DepositJunk implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
-        if (!Bank.open()) return false;
-        return Bank.depositAllExcept(Items.PROTECTED_ITEMS)
+    public void execute(AbstractScript abstractScript) {
+        if (!Bank.open()) return;
+        boolean deposited = Bank.depositAllExcept(Items.PROTECTED_ITEMS)
                 && Condition.wait(() -> InventoryExtensions.containsOnly(Items.PROTECTED_ITEMS), 75, 30);
     }
 }

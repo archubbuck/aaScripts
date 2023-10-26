@@ -37,15 +37,12 @@ public class BloodyHellScript extends AbstractScript {
 
     private static final Task[] tasks = {
             new SetCamera(),
-            new EquipSkillCape(),
-            new EquipStaff(),
-            new EquipGlory(),
             new DrinkStamina(),
             new GoToBank(),
-            new DepositJunk(),
-            new WithdrawSkillCape(),
-            new WithdrawStaff(),
-            new WithdrawGlory(),
+            new WearEquipment(),
+            new DepositItems(),
+            new WithdrawEquipment(),
+//            new WithdrawSupplies(),
             new WithdrawPouch(),
             new ActivateBloodEssence(),
             new WithdrawBloodEssenceActive(),
@@ -79,7 +76,7 @@ public class BloodyHellScript extends AbstractScript {
             logger.info("Checking: " + task.getClass().getName());
             if (task.activate()) {
                 logger.info("Executing " + task.getClass().getName());
-                boolean result = task.execute(this);
+                task.execute(this);
                 break;
             }
         }
@@ -92,9 +89,9 @@ public class BloodyHellScript extends AbstractScript {
      */
     @Subscribe
     public void onMessage(MessageEvent messageEvent) {
-        if (!messageEvent.getSender().isEmpty()) {
-            return;
-        }
+//        if (!messageEvent.getSender().isEmpty()) {
+//            return;
+//        }
         PouchTracker.INSTANCE.messageEvent(messageEvent);
         SystemMessageManager.INSTANCE.messageRecieved(messageEvent);
     }

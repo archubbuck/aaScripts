@@ -9,7 +9,7 @@ import org.powbot.api.script.AbstractScript;
 
 import java.util.logging.Logger;
 
-public class SetCamera implements Task {
+public class SetCamera extends Task {
     Logger logger = Logger.getLogger(this.getClass().getName());
 
     @Override
@@ -18,7 +18,7 @@ public class SetCamera implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
+    public void execute(AbstractScript abstractScript) {
         logger.info("Setting the camera");
 
         if (Bank.opened()) {
@@ -50,8 +50,6 @@ public class SetCamera implements Task {
                             ? "We zoomed the camera out!"
                             : "We failed to zoom the camera out!");
         }
-
-        return zoomValid() && pitchValid();
     }
 
     private boolean zoomValid() {

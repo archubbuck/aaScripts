@@ -10,7 +10,7 @@ import org.powbot.api.script.AbstractScript;
 
 import static org.core.helpers.Conditions.all;
 
-public class CraftRunes implements Task {
+public class CraftRunes extends Task {
     @Override
     public boolean activate() {
         return all(
@@ -20,15 +20,13 @@ public class CraftRunes implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
+    public void execute(AbstractScript abstractScript) {
         GameObject altar = getAltar();
 
-        if (!altar.valid()) return false;
+        if (!altar.valid()) return;
 
-        return altar.interact("Craft-rune")
-                && Condition.wait(() -> InventoryExtensions.doesNotContain(Items.PURE_ESSENCE), 75, 15);
-//        return altar.interact("Craft-rune")
-//                && Condition.wait(() -> Skills.timeSinceExpGained(Skill.Runecrafting) <= 1000, 50, 20);
+        boolean crafted = altar.interact("Craft-rune")
+                && Condition.wait(() -> InventoryExtensions.doesNotContain(Items.PURE_ESSENCE), 125, 15);
     }
 
     private GameObject getAltar() {

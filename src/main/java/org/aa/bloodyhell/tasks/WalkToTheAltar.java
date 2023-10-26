@@ -10,9 +10,8 @@ import org.powbot.api.rt4.Players;
 import org.powbot.api.script.AbstractScript;
 
 import static org.core.helpers.Conditions.all;
-import static org.core.helpers.Conditions.any;
 
-public class WalkToTheAltar implements Task {
+public class WalkToTheAltar extends Task {
     @Override
     public boolean activate() {
         return all(
@@ -26,40 +25,38 @@ public class WalkToTheAltar implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
+    public void execute(AbstractScript abstractScript) {
         if (Areas.EDGEVILLE_AREA.contains(Players.local()) || Areas.FAIRY_RING_AREA.contains(Players.local())) {
-            return new GoToCave1().execute(abstractScript);
+            new GoToCave1().execute(abstractScript);
+            return;
         }
 
         if (Areas.CAVE_1_AREA.contains(Players.local())) {
-            return new GoToCave2().execute(abstractScript);
+            new GoToCave2().execute(abstractScript);
+            return;
         }
 
         if (Areas.CAVE_2_AREA.contains(Players.local())) {
-            return new GoToCave3().execute(abstractScript);
+            new GoToCave3().execute(abstractScript);
+            return;
         }
 
         if (Areas.CAVE_3_AREA.contains(Players.local())) {
-            return new GoToCave4().execute(abstractScript);
+            new GoToCave4().execute(abstractScript);
+            return;
         }
 
         if (Areas.CAVE_4_AREA.contains(Players.local())) {
-            return new GoToCave7().execute(abstractScript);
+            new GoToCave7().execute(abstractScript);
+            return;
         }
 
         if (Areas.CAVE_7_AREA.contains(Players.local())) {
-            return new GoToBloodAltar().execute(abstractScript);
+            new GoToBloodAltar().execute(abstractScript);
+            return;
         }
 
         System.out.println("We are in an unexpected area!");
         System.out.println(Players.local().tile());
-
-        return false;
     }
-
-    // Player is inside of the Area
-    // Interactable object is on the screen
-    // ---- interact and wait
-    // **** Starting Area, Target Area, Anchor Object
-
 }

@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 import static org.core.helpers.Conditions.all;
 
-public class FillPouch implements Task {
+public class FillPouch extends Task {
     Logger logger = Logger.getLogger(this.getClass().getName());
 
     @Override
@@ -26,7 +26,7 @@ public class FillPouch implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
+    public void execute(AbstractScript abstractScript) {
         logger.info("Filling pouches");
 
         PouchTracker.INSTANCE.getSupportedPouches().forEach(p -> {
@@ -37,56 +37,15 @@ public class FillPouch implements Task {
             if (!pouch.actions().contains("Fill")) {
                 p.setStatus(true);
             } else {
-                fillPouch(pouch);
+//                fillPouch(pouch);
+                boolean filled = pouch.interact("Fill") && Condition.wait(() -> !Inventory.isFull(), 10, 150);
             }
         });
 
-        Condition.sleep(Random.nextInt(600, 900));
-
-        return true;
+//        Condition.sleep(Random.nextInt(600, 900));
     }
 
-    private boolean fillPouch(Item item) {
-        return InventoryExtensions.contains(Items.PURE_ESSENCE) && item.interact("Fill");
-    }
-
-//    @Override
-//    public void execute(AbstractScript abstractScript) {
-//
-//        Item colossalPouch = Inventory.stream().id(Items.COLOSSAL_POUCH).first();
-//
-////        if (colossalPouch.actions().stream().anyMatch(s -> s.equals("Empty"))) {
-////            logger.info("updated");
-////            State.pouchIsFull = true;
-////            return;
-////        }
-//
-////        logger.info("breach");
-//
-//        logger.info("Attempting to fill the colossal pouch");
-//
-////        long initialCountOfPureEssence = getCountOfPureEssence();
-//        long initialCountOfPureEssence = InventoryExtensions.count(Items.PURE_ESSENCE);
-//
-////        logger.info(""+Inventory.stream().id(Items.COLOSSAL_POUCH).count());
-//
-//        boolean filledColossalPouch = colossalPouch.interact("Fill")
-//                && Condition.wait(() -> State.pouchIsFull() || initialCountOfPureEssence < InventoryExtensions.count(Items.PURE_ESSENCE), 75, 10);
-//
-////       if (initialCountOfPureEssence < InventoryExtensions.count(Items.PURE_ESSENCE)) {
-////           State.essenceInPouch =
-////       }
-//
-////        logger.info(
-////                filledColossalPouch || State.pouchIsFull
-////                        ? "Successfully filled the colossal pouch"
-////                        : "Failed to fill the colossal pouch"
-////        );
-//
+//    private boolean fillPouch(Item item) {
+//        return InventoryExtensions.contains(Items.PURE_ESSENCE) && item.interact("Fill");
 //    }
-//
-//    private long getCountOfPureEssence() {
-//        return Inventory.stream().id(Items.PURE_ESSENCE).count();
-//    }
-
 }

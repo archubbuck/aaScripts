@@ -13,9 +13,7 @@ import org.powbot.api.script.AbstractScript;
 
 import static org.core.helpers.Conditions.all;
 
-public class GoToBloodAltar implements Task {
-//    private final Tile RUINS_TILE = new Tile(3559, 9780);
-//    private final Tile RUINS_TILE = new Tile(3562, 9782);
+public class GoToBloodAltar extends Task {
 
     private final Tile RUINS_TILE = new Tile(3560, 9780, 0);
 
@@ -23,7 +21,6 @@ public class GoToBloodAltar implements Task {
     public boolean activate() {
         return all(
                 Areas.CAVE_7_AREA.contains(Players.local()),
-//                Objects.stream().name("Altar").action("Craft-runes").isEmpty(),
                 EquipmentExtensions.contains(Items.RUNECRAFTING_CAPES),
                 EquipmentExtensions.contains(Items.STAVES),
                 EquipmentExtensions.contains(Items.AMULETS_OF_GLORY),
@@ -33,10 +30,7 @@ public class GoToBloodAltar implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
-//        System.out.println("Navigating to RUINS_TILE");
-
-//        System.out.println("Distance: " + RUINS_TILE.distance());
+    public void execute(AbstractScript abstractScript) {
 
         if (RUINS_TILE.distance() > 5) {
             boolean navigated = Movement.builder(RUINS_TILE)
@@ -48,19 +42,14 @@ public class GoToBloodAltar implements Task {
                     .getSuccess();
         }
 
-//        GameObject ruins2 = Objects.stream().name("Mysterious ruins").first();
-
-//        System.out.println(ruins2.tile());
-
         GameObject ruins = Objects.stream().name("Mysterious ruins")
-//                .at(RUINS_TILE)
                 .within(20)
                 .nearest(RUINS_TILE)
                 .first();
 
         if (!ruins.valid()) {
             System.out.println("Unable to locate the ruins near RUINS_TILE");
-            return false;
+            return;
         }
 
         if (!ruins.inViewport(true)) {
@@ -72,7 +61,7 @@ public class GoToBloodAltar implements Task {
 
         if (!exiting) {
             System.out.println("Failed to interact with the ruins near RUINS_TILE");
-            return false;
+            return;
         }
 
         System.out.println("Waiting for the player to finish exiting");
@@ -81,9 +70,6 @@ public class GoToBloodAltar implements Task {
 
         if (!exited) {
             System.out.println("Failed to exit the cave within the time limit");
-            return false;
         }
-
-        return true;
     }
 }

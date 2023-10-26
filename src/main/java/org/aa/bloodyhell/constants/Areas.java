@@ -60,8 +60,7 @@ public class Areas {
             new Tile(3507, 9807, 0),
             new Tile(3507, 9814, 0),
             new Tile(3492, 9828, 0),
-            new Tile(3483, 9837, 0),
-            new Tile(3476, 9837, 0));
+            new Tile(3483, 9837, 0));
 
     public static final Area CAVE_4_AREA = new Area(
             new Tile(3532, 9791, 0),

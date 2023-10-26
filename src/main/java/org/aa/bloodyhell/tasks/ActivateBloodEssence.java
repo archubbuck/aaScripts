@@ -11,7 +11,7 @@ import org.powbot.api.rt4.Inventory;
 import org.powbot.api.rt4.Item;
 import org.powbot.api.script.AbstractScript;
 
-public class ActivateBloodEssence implements Task {
+public class ActivateBloodEssence extends Task {
     @Override
     public boolean activate() {
         return InventoryExtensions.doesNotContain(Items.BLOOD_ESSENCE_ACTIVE)
@@ -20,13 +20,13 @@ public class ActivateBloodEssence implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
+    public void execute(AbstractScript abstractScript) {
         if (Bank.opened()) {
             boolean closed = Bank.close() && Condition.wait(() -> !Bank.opened(), 300, 10);
-            if (!closed) return false;
+            if (!closed) return;
         }
-        if (!Game.tab(Tab.INVENTORY)) return false;
+        if (!Game.tab(Tab.INVENTORY)) return;
         Item item = Inventory.stream().id(Items.BLOOD_ESSENCE).first();
-        return item.interact("Activate") && Condition.wait(() -> InventoryExtensions.contains(Items.BLOOD_ESSENCE_ACTIVE), 300, 10);
+        boolean activated = item.interact("Activate") && Condition.wait(() -> InventoryExtensions.contains(Items.BLOOD_ESSENCE_ACTIVE), 300, 10);
     }
 }

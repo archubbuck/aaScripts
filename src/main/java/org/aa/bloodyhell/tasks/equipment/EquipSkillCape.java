@@ -12,7 +12,7 @@ import org.powbot.api.rt4.Inventory;
 import org.powbot.api.rt4.Item;
 import org.powbot.api.script.AbstractScript;
 
-public class EquipSkillCape implements Task {
+public class EquipSkillCape extends Task {
     @Override
     public boolean activate() {
         return EquipmentExtensions.doesNotContain(Items.RUNECRAFTING_CAPES)
@@ -20,9 +20,9 @@ public class EquipSkillCape implements Task {
     }
 
     @Override
-    public boolean execute(AbstractScript abstractScript) {
-        if (!Bank.opened() && !Game.tab(Tab.INVENTORY)) return false;
+    public void execute(AbstractScript abstractScript) {
+        if (!Bank.opened() && !Game.tab(Tab.INVENTORY)) return;
         Item item = Inventory.stream().id(Items.RUNECRAFTING_CAPES).first();
-        return item.interact("Wear") && Condition.wait(() -> EquipmentExtensions.contains(item.id()), 300, 10);
+        boolean equipped = item.interact("Wear") && Condition.wait(() -> EquipmentExtensions.contains(item.id()), 300, 10);
     }
 }
