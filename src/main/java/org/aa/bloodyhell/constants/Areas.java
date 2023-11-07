@@ -77,43 +77,63 @@ public class Areas {
             new Tile(3540, 9791, 0),
             new Tile(3532, 9791, 0));
 
-    public static final Area CAVE_5_AREA = new Area(
-            new Tile(3511, 9809, 0),
-            new Tile(3511, 9813, 0),
-            new Tile(3517, 9817, 0),
-            new Tile(3521, 9817, 0),
-            new Tile(3527, 9823, 0),
-            new Tile(3531, 9823, 0),
-            new Tile(3533, 9824, 0),
-            new Tile(3535, 9824, 0),
-            new Tile(3538, 9827, 0),
-            new Tile(3539, 9827, 0),
-            new Tile(3540, 9828, 0),
-            new Tile(3554, 9828, 0),
-            new Tile(3555, 9827, 0),
-            new Tile(3557, 9827, 0),
-            new Tile(3563, 9821, 0),
-            new Tile(3563, 9815, 0),
-            new Tile(3562, 9813, 0),
-            new Tile(3559, 9812, 0),
-            new Tile(3557, 9810, 0),
-            new Tile(3556, 9810, 0),
-            new Tile(3544, 9797, 0),
-            new Tile(3511, 9809, 0));
+    public static final Area CAVE_5_AREA = new Area(new Tile(3488, 9877, 0), new Tile(3514, 9857, 0));
+
+//    public static final Area CAVE_5_AREA = new Area(
+//            new Tile(3511, 9809, 0),
+//            new Tile(3511, 9813, 0),
+//            new Tile(3517, 9817, 0),
+//            new Tile(3521, 9817, 0),
+//            new Tile(3527, 9823, 0),
+//            new Tile(3531, 9823, 0),
+//            new Tile(3533, 9824, 0),
+//            new Tile(3535, 9824, 0),
+//            new Tile(3538, 9827, 0),
+//            new Tile(3539, 9827, 0),
+//            new Tile(3540, 9828, 0),
+//            new Tile(3554, 9828, 0),
+//            new Tile(3555, 9827, 0),
+//            new Tile(3557, 9827, 0),
+//            new Tile(3563, 9821, 0),
+//            new Tile(3563, 9815, 0),
+//            new Tile(3562, 9813, 0),
+//            new Tile(3559, 9812, 0),
+//            new Tile(3557, 9810, 0),
+//            new Tile(3556, 9810, 0),
+//            new Tile(3544, 9797, 0),
+//            new Tile(3511, 9809, 0));
 
     public static final Area CAVE_6_AREA = new Area(
-            new Tile(3557, 9787, 0),
-            new Tile(3552, 9787, 0),
-            new Tile(3552, 9794, 0),
-            new Tile(3550, 9797, 0),
-            new Tile(3550, 9800, 0),
-            new Tile(3557, 9807, 0),
-            new Tile(3558, 9810, 0),
-            new Tile(3559, 9811, 0),
-            new Tile(3561, 9811, 0),
-            new Tile(3571, 9801, 0));
+            new Tile(3510, 9814, 0),
+            new Tile(3510, 9807, 0),
+            new Tile(3519, 9807, 0),
+            new Tile(3563, 9814, 0),
+            new Tile(3563, 9829, 0),
+            new Tile(3537, 9829, 0));
+
+//    public static final Area CAVE_6_AREA = new Area(
+//            new Tile(3557, 9787, 0),
+//            new Tile(3552, 9787, 0),
+//            new Tile(3552, 9794, 0),
+//            new Tile(3550, 9797, 0),
+//            new Tile(3550, 9800, 0),
+//            new Tile(3557, 9807, 0),
+//            new Tile(3558, 9810, 0),
+//            new Tile(3559, 9811, 0),
+//            new Tile(3561, 9811, 0),
+//            new Tile(3571, 9801, 0));
 
     public static final Area CAVE_7_AREA = new Area(
+            new Tile(3548, 9797, 0),
+            new Tile(3558, 9810, 0),
+            new Tile(3563, 9810, 0),
+            new Tile(3572, 9802, 0),
+            new Tile(3566, 9796, 0),
+            new Tile(3560, 9796, 0),
+            new Tile(3558, 9788, 0),
+            new Tile(3552, 9788, 0));
+
+    public static final Area CAVE_10_AREA = new Area(
             new Tile(3542, 9775, 0),
             new Tile(3542, 9769, 0),
             new Tile(3545, 9763, 0),

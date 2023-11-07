@@ -56,11 +56,9 @@ public class BloodyHellScript extends AbstractScript {
     };
 
     @Override
-    public void onStart() {
+        public void onStart() {
         Paint paint = new PaintBuilder()
                 .trackInventoryItem(Items.BLOOD_RUNE)
-                .addString("hasPouchToEmpty", () -> String.valueOf(PouchTracker.INSTANCE.hasPouchToEmpty()))
-                .addString("hasPouchToFill", () -> String.valueOf(PouchTracker.INSTANCE.hasPouchToFill()))
                 .build();
         addPaint(paint);
         PouchTracker.INSTANCE.setPouchesToTrack(
