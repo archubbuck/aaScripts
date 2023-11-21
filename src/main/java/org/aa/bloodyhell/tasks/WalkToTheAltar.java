@@ -464,19 +464,19 @@ public class WalkToTheAltar extends Task {
     private void goToBloodAltar() {
         final Tile RUINS_TILE = new Tile(3560, 9780, 0);
 
-        if (RUINS_TILE.distance() > 5) {
+        if (RUINS_TILE.distance() > 3) {
             boolean navigated = Movement.builder(RUINS_TILE)
                     .setRunMin(15)
                     .setRunMax(75)
                     .setUseTeleports(false)
-                    .setWalkUntil(() -> RUINS_TILE.distance() <= 5)
+                    .setWalkUntil(() -> RUINS_TILE.distance() <= 3)
                     .move()
                     .getSuccess();
         }
 
         GameObject ruins = Objects.stream().name("Mysterious ruins")
-                .within(20)
-                .nearest(RUINS_TILE)
+//                .within(20)
+//                .nearest(RUINS_TILE)
                 .first();
 
         if (!ruins.valid()) {
@@ -489,7 +489,7 @@ public class WalkToTheAltar extends Task {
             Camera.turnTo(ruins);
         }
 
-        boolean exiting = ruins.interact("Enter");
+        boolean exiting = ruins.interact("Enter", true);
 
         if (!exiting) {
             System.out.println("Failed to interact with the ruins near RUINS_TILE");

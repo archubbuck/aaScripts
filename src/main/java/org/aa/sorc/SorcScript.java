@@ -30,15 +30,143 @@ import java.util.logging.Logger;
         version = "0.0.1",
         category = ScriptCategory.Minigame)
 public class SorcScript extends AbstractScript {
+    private final boolean redeem = true;
+
     protected State state = new State();
+    protected Paint paint;
 
     GameObject tree;
     GameObject gate;
 
     @Override
     public void poll() {
+        if (redeem) {
+            exchange();
+        } else {
+            squirk();
+        }
+    }
 
+    private int getCountOfStaminas() {
+        return (int) Inventory.stream().name(Items.STAMINA_POTION_4).count();
+    }
 
+    private void loadCache() {
+        tree = getTree();
+        gate = getGate();
+    }
+
+    private GameObject getTree() {
+        return Objects.stream().name(GameObjects.TREE_NAME).action(GameObjects.TREE_ACTION).within(Tiles.TREE_TILE, 5).first();
+    }
+
+    private GameObject getGate() {
+        return Objects.stream().name(GameObjects.GATE_NAME).action(GameObjects.GATE_ACTION).at(Tiles.GATE_TILE).first();
+    }
+
+    @Override
+    public void onStart() {
+
+        PaintBuilder paintBuilder = new PaintBuilder();
+
+        /*
+         * Track the number of laps by tracking the fruit
+         */
+
+        paintBuilder.trackInventoryItem(10845, Items.SUMMER_SQUIRK, TrackInventoryOption.QuantityChangeIncOny);
+
+        /*
+         * Track the juice so that we can calculate the potential XP
+         */
+
+        paintBuilder.trackInventoryItem(10849, Items.SUMMER_SQUIRK_JUICE, TrackInventoryOption.QuantityChangeIncOny);
+
+        paint = paintBuilder.build();
+        addPaint(paint);
+    }
+
+    public void exchange() {
+        boolean hasJuice = Inventory.stream().name(Items.SUMMER_SQUIRK_JUICE).isNotEmpty();
+
+        /*
+         * If the player has juice in their inventory, exchange it for XP
+         */
+
+        if (hasJuice) {
+            var osmanTile = new Tile(3287, 3182, 0);
+            var osman = Npcs.stream().name("Osman").first();
+
+            if (!osman.valid()) {
+                boolean navigated = Movement.builder(osmanTile)
+                        .setRunMin(Configuration.getRunEnergyMin())
+                        .setRunMax(Configuration.getRunEnergyMax())
+                        .setWalkUntil(osman::valid)
+                        .setUseTeleports(false)
+                        .move()
+                        .getSuccess();
+                if (!navigated) {
+                    System.out.println("Failed to locate Osman in time!");
+                    return;
+                }
+            }
+
+            boolean chatting = osman.interact("Talk-to")
+                    && Condition.wait(Chat::chatting, 125, 30);
+
+            if (chatting) {
+                boolean chatComplete = Chat.completeChat(
+                        "I'd like to talk about sq'irks."
+                );
+                if (!chatComplete) {
+                    System.out.println("Failed to complete the chat!");
+                }
+            }
+
+            return;
+        }
+
+        /*
+         * If the player doesn't have any juice in their inventory, then we must bank
+         */
+
+        if (!Areas.AL_KHARID_BANK.contains(Players.local())) {
+            boolean navigated = Movement.builder(Areas.AL_KHARID_BANK.getRandomTile())
+                    .setRunMin(Configuration.getRunEnergyMin())
+                    .setRunMax(Configuration.getRunEnergyMax())
+                    .setWalkUntil(() -> Areas.AL_KHARID_BANK.contains(Players.local()))
+                    .setUseTeleports(false)
+                    .move()
+                    .getSuccess();
+            if (!navigated) {
+                System.out.println("Failed to navigate to the bank within the threshold");
+                return;
+            }
+        }
+
+        /*
+         * Open the bank
+         */
+
+        boolean bankOpened = Bank.open() && Condition.wait(Bank::opened, 125, 20);
+        if (!bankOpened) {
+            getLog().warning("Failed to open the bank");
+            return;
+        }
+
+        /*
+         * Withdraw the juice from the bank
+         */
+
+        boolean withdrewJuice = Bank.withdraw(Items.SUMMER_SQUIRK_JUICE, Bank.Amount.ALL)
+                && Condition.wait(() -> Inventory.stream().name(Items.SUMMER_SQUIRK_JUICE).isNotEmpty(), 125, 20);
+        if (!withdrewJuice) {
+            getLog().warning("Failed to withdraw the juice");
+            return;
+        }
+
+    }
+
+    public void squirk() {
         /*
          * Idle if the player's animation matches
          */
@@ -238,15 +366,15 @@ public class SorcScript extends AbstractScript {
             }
             boolean success = tree.interact(GameObjects.TREE_ACTION)
                     && Condition.wait(() -> {
-                        boolean animating = Players.local().animation() == 2280;
-                        if (animating) {
-                            getLog().info("[TREE] Waiting for animation to end");
-                        }
-                        boolean satisified = !animating && (!tree.valid() || !tree.reachable());
-                        if (satisified) {
-                            getLog().info("Successfully navigated the tree");
-                        }
-                        return satisified;
+                boolean animating = Players.local().animation() == 2280;
+                if (animating) {
+                    getLog().info("[TREE] Waiting for animation to end");
+                }
+                boolean satisified = !animating && (!tree.valid() || !tree.reachable());
+                if (satisified) {
+                    getLog().info("Successfully navigated the tree");
+                }
+                return satisified;
             }, 175, 100);
             return;
         }
@@ -257,61 +385,10 @@ public class SorcScript extends AbstractScript {
 
         getLog().info("Using dax to walk to the SORC_GARDEN_HOUSE");
         Movement.builder(Areas.SORC_GARDEN_HOUSE.getRandomTile())
-            .setRunMin(Configuration.getRunEnergyMin())
-            .setRunMax(Configuration.getRunEnergyMax())
-            .setUseTeleports(false)
-            .move();
-    }
-
-    private int getCountOfStaminas() {
-        return (int) Inventory.stream().name(Items.STAMINA_POTION_4).count();
-    }
-
-    private void loadCache() {
-        tree = getTree();
-        gate = getGate();
-    }
-
-    private GameObject getTree() {
-        return Objects.stream().name(GameObjects.TREE_NAME).action(GameObjects.TREE_ACTION).within(Tiles.TREE_TILE, 5).first();
-    }
-
-    private GameObject getGate() {
-        return Objects.stream().name(GameObjects.GATE_NAME).action(GameObjects.GATE_ACTION).at(Tiles.GATE_TILE).first();
-    }
-
-    @Override
-    public void onStart() {
-        PaintBuilder paintBuilder = new PaintBuilder();
-
-        /*
-         * Track the number of laps by tracking the fruit
-         */
-
-        RItemDefinition squirk = ItemLoader.lookup(Items.SUMMER_SQUIRK);
-        if (squirk != null) {
-            paintBuilder.trackInventoryItem(squirk.id(), "Laps", TrackInventoryOption.QuantityChangeIncOny);
-        }
-
-        /*
-         * Track the juice so that we can calculate the potential XP
-         */
-
-        RItemDefinition squirkJuice = ItemLoader.lookup(Items.SUMMER_SQUIRK_JUICE);
-        if (squirkJuice != null) {
-            paintBuilder.trackInventoryItem(squirkJuice.id(), squirkJuice.name(), TrackInventoryOption.QuantityChangeIncOny);
-        }
-
-        /*
-         * Track the potential XP
-         */
-
-//        if (squirkJuice != null) {
-//            paintBuilder.addString("Potential XP", () -> String.valueOf(ScriptManager.INSTANCE.script().paints().get(0).getItems().get(0).get(0). * 3_000));
-//        }
-
-        Paint paint = paintBuilder.build();
-        addPaint(paint);
+                .setRunMin(Configuration.getRunEnergyMin())
+                .setRunMax(Configuration.getRunEnergyMax())
+                .setUseTeleports(false)
+                .move();
     }
 
     public static void main(String[] args) {
